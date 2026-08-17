@@ -1,0 +1,187 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #000;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+#loading {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: #050505;
+}
+
+#loading h1 {
+    margin-top: 30px;
+    font-size: 28px;
+}
+
+#loading p {
+    color: #888;
+}
+
+.loader {
+    width: 70px;
+    height: 70px;
+
+    border: 6px solid #222;
+    border-top: 6px solid white;
+
+    border-radius: 50%;
+
+    animation: spin 1s linear infinite;
+}
+
+#scare {
+    display: none;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: #000;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+}
+
+.warning {
+    position: absolute;
+    top: 30px;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    animation: blink 0.15s infinite;
+}
+
+.face {
+    position: relative;
+
+    width: 280px;
+    height: 320px;
+
+    background: #ddd;
+
+    border-radius: 48% 48% 42% 42%;
+
+    box-shadow:
+        0 0 40px #fff,
+        0 0 100px #900;
+
+    transform: scale(1.2);
+}
+
+.eye {
+    position: absolute;
+
+    width: 55px;
+    height: 90px;
+
+    background: #000;
+
+    border-radius: 50%;
+
+    top: 90px;
+}
+
+.eye::after {
+    content: "";
+
+    position: absolute;
+
+    width: 18px;
+    height: 35px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    left: 18px;
+    top: 20px;
+}
+
+.left {
+    left: 55px;
+}
+
+.right {
+    right: 55px;
+}
+
+.mouth {
+    position: absolute;
+
+    width: 130px;
+    height: 80px;
+
+    background: #000;
+
+    border-radius: 50%;
+
+    bottom: 55px;
+    left: 75px;
+}
+
+#scare h1 {
+    margin-top: 50px;
+
+    font-size: 35px;
+
+    animation: blink 0.1s infinite;
+}
+
+#scare p {
+    color: #777;
+}
+
+.shake {
+    animation: shake 0.05s infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.2;
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(5px, 5px);
+    }
+
+    25% {
+        transform: translate(-5px, -5px);
+    }
+
+    50% {
+        transform: translate(5px, -5px);
+    }
+
+    75% {
+        transform: translate(-5px, 5px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
